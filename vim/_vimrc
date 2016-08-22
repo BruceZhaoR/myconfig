@@ -37,7 +37,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 set guifont=Consolas:h12     " 设置字体
 set nobackup                 " 覆盖文件时不备份
-set nowritebackup
 set confirm                  " 设置未保存时候，弹出确认
 set autochdir                " 自动切换当前目录为当前文件所在的目录
 set history=50
