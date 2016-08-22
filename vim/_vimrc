@@ -2,7 +2,7 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-"´¦ÀíÎÄ±¾ÖĞÏÔÊ¾ÂÒÂë start
+"å¤„ç†æ–‡æœ¬ä¸­æ˜¾ç¤ºä¹±ç  start
 set fenc=chinese
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,latin-1
@@ -12,47 +12,47 @@ set fileencoding=chinese
 else
 set fileencoding=utf-8
 endif
-"´¦ÀíÎÄ±¾ÖĞÏÔÊ¾ÂÒÂë end
+"å¤„ç†æ–‡æœ¬ä¸­æ˜¾ç¤ºä¹±ç  end
 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-"´¦ÀíconsleÊä³öÂÒÂë
+"å¤„ç†consleè¾“å‡ºä¹±ç 
 language messages zh_CN.utf-8
-"ÖĞÎÄÂÒÂë½áÊø
+"ä¸­æ–‡ä¹±ç ç»“æŸ
 
-
+" å¦å¤–ä¸€ç§è§£å†³ä¸­æ–‡ä¹±ç çš„æ–¹æ³•
 " set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 " set termencoding=utf-8
 " set encoding=utf-8
 " set fileencoding=utf-8
 
-set nocompatible             " ¹Ø±Õ vi ¼æÈİÄ£Ê½
-filetype on                  "Õì²âÎÄ¼şÀàĞÍ
-syntax on                    " ×Ô¶¯Óï·¨¸ßÁÁ
-colorscheme molokai          " Éè¶¨ÅäÉ«·½°¸
+set nocompatible             " å…³é—­ vi å…¼å®¹æ¨¡å¼
+filetype on                  "ä¾¦æµ‹æ–‡ä»¶ç±»å‹
+syntax on                    " è‡ªåŠ¨è¯­æ³•é«˜äº®
+colorscheme molokai          " è®¾å®šé…è‰²æ–¹æ¡ˆ
 let g:rehash256 = 1
 
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
-set guifont=Consolas:h14     " ÉèÖÃ×ÖÌå
-set nobackup                 " ¸²¸ÇÎÄ¼şÊ±²»±¸·İ
+set guifont=Consolas:h12     " è®¾ç½®å­—ä½“
+set nobackup                 " è¦†ç›–æ–‡ä»¶æ—¶ä¸å¤‡ä»½
 set nowritebackup
-set confirm                  " ÉèÖÃÎ´±£´æÊ±ºò£¬µ¯³öÈ·ÈÏ
-set autochdir                " ×Ô¶¯ÇĞ»»µ±Ç°Ä¿Â¼Îªµ±Ç°ÎÄ¼şËùÔÚµÄÄ¿Â¼
+set confirm                  " è®¾ç½®æœªä¿å­˜æ—¶å€™ï¼Œå¼¹å‡ºç¡®è®¤
+set autochdir                " è‡ªåŠ¨åˆ‡æ¢å½“å‰ç›®å½•ä¸ºå½“å‰æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•
 set history=50
 set ruler                    " show the cursor position all the time
 set showcmd                  " display incomplete commands
 set incsearch                " do incremental searching
-set ignorecase smartcase     " ËÑË÷Ê±ºöÂÔ´óĞ¡Ğ´
-set hlsearch                 " ËÑË÷Ê±¸ßÁÁÏÔÊ¾±»ÕÒµ½µÄÎÄ±¾
-set smartindent              " ¿ªÆôĞÂĞĞÊ±Ê¹ÓÃÖÇÄÜ×Ô¶¯Ëõ½ø
-set autoindent               " ×Ô¶¯Ëõ½ø
-set shiftwidth=2             " ÉèÖÃÃ¿´ÎËõ½øµÄÁĞÊı
-set showmatch                " ×Ô¶¯Æ¥ÅäÀ¨ºÅ
-set laststatus=2             " ×ÜÊÇÏÔÊ¾×´Ì¬À¸
-set noerrorbells             " ¹Ø±Õ´íÎóĞÅÏ¢ÏìÁå
-set novisualbell             " ¹Ø±ÕÊ¹ÓÃ¿ÉÊÓÏìÁå´úÌæºô½Ğ
+set ignorecase smartcase     " æœç´¢æ—¶å¿½ç•¥å¤§å°å†™
+set hlsearch                 " æœç´¢æ—¶é«˜äº®æ˜¾ç¤ºè¢«æ‰¾åˆ°çš„æ–‡æœ¬
+set smartindent              " å¼€å¯æ–°è¡Œæ—¶ä½¿ç”¨æ™ºèƒ½è‡ªåŠ¨ç¼©è¿›
+set autoindent               " è‡ªåŠ¨ç¼©è¿›
+set shiftwidth=2             " è®¾ç½®æ¯æ¬¡ç¼©è¿›çš„åˆ—æ•°
+set showmatch                " è‡ªåŠ¨åŒ¹é…æ‹¬å·
+set laststatus=2             " æ€»æ˜¯æ˜¾ç¤ºçŠ¶æ€æ 
+set noerrorbells             " å…³é—­é”™è¯¯ä¿¡æ¯å“é“ƒ
+set novisualbell             " å…³é—­ä½¿ç”¨å¯è§†å“é“ƒä»£æ›¿å‘¼å«
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -62,8 +62,8 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
-set cursorcolumn             "¹â±êÁĞ
-set cursorline               "¹â±êĞĞ
+set cursorcolumn             "å…‰æ ‡åˆ—
+set cursorline               "å…‰æ ‡è¡Œ
 
 highlight CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
