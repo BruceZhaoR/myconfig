@@ -26,6 +26,10 @@ language messages zh_CN.utf-8
 " set encoding=utf-8
 " set fileencoding=utf-8
 
+if has("statusline")
+ set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+
 set nocompatible             " 关闭 vi 兼容模式
 filetype on                  "侦测文件类型
 syntax on                    " 自动语法高亮
