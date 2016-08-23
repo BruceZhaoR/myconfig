@@ -2,6 +2,11 @@
 
 **个人配置文件: _vrimrc**
 
+## css hex 颜色高亮插件
+
+**Colorizer-0.10.vmb**
+项目地址：https://github.com/chrisbra/Colorizer
+
 ## 常用命令
 
 ### 保存/退出/查找
@@ -38,6 +43,9 @@ r/R 替换光标后面的一个字符/多个字符
 - `guu`/ `gUU` 一行全部变小/大写 可以在`v`模式下，选择后按 u/U。
 - ctrl+ o/i 回到之前/较新位置
 - ctrl + n/p 关键词补全
+
+- `zr/R` `zm/M` 代码折叠打开 
+- `:! start %` 在浏览器中运行html
 
 
 当前日期: 2016/08/23 周二 
