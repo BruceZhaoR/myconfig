@@ -3,12 +3,12 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 "处理文本中显示乱码 start
-set fenc=chinese
+set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,latin-1
 
 if has("win32")
-set fileencoding=chinese
+set fileencoding=utf-8
 else
 set fileencoding=utf-8
 endif
@@ -26,6 +26,7 @@ language messages zh_CN.utf-8
 " set encoding=utf-8
 " set fileencoding=utf-8
 
+" 显示文件编码类型
 if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
@@ -38,6 +39,12 @@ let g:rehash256 = 1
 
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+" html,css 高亮
+:let g:colorizer_auto_color = 1
+:let g:colorizer_auto_filetype='css,html'
+:let g:colorizer_skip_comments = 1
+let g:colorizer_custom_colors = { 'white': '#fff'}
 
 set guifont=Consolas:h12     " 设置字体
 set lines=30 columns=85      " 设置启动窗口大小30*85
@@ -52,8 +59,8 @@ set ignorecase smartcase     " 搜索时忽略大小写
 set hlsearch                 " 搜索时高亮显示被找到的文本
 set smartindent              " 开启新行时使用智能自动缩进
 set autoindent               " 自动缩进
-set shiftwidth=4             " 设置每次缩进的列数
-set tabstop=4                " 设置tab=4
+set shiftwidth=2             " 设置每次缩进的列数
+set tabstop=2                " 设置tab=4
 set showmatch                " 自动匹配括号
 set laststatus=2             " 总是显示状态栏
 set noerrorbells             " 关闭错误信息响铃

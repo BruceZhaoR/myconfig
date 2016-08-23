@@ -7,6 +7,19 @@
 **Colorizer-0.10.vmb**
 项目地址：https://github.com/chrisbra/Colorizer
 
+用vim打开这个文件，然后输入`:so %`运行。更多设置信息请输入：`:h Colorizer`.
+
+高亮：`:ColorHighlight`
+取消高亮： `:ColorClear`
+自定义颜色： `let g:colorizer_custom_colors = { 'white': '#fff'}`
+
+自动高亮,在_vimrc中写入下面命令：
+```
+:let g:colorizer_auto_color = 1
+:let g:colorizer_auto_filetype='css,html'
+:let g:colorizer_skip_comments = 1
+```
+
 ## 常用命令
 
 ### 保存/退出/查找
@@ -40,10 +53,11 @@ r/R 替换光标后面的一个字符/多个字符
 - `:set scb` 两个分屏的文件同步移动 `:set scb!`解开  scb=scrollbind
 - `:set nohls`  设置命令 取消高亮
 - `:set fileencoding` 查看文件编码
+
+### 有用的命令
 - `guu`/ `gUU` 一行全部变小/大写 可以在`v`模式下，选择后按 u/U。
 - ctrl+ o/i 回到之前/较新位置
 - ctrl + n/p 关键词补全
-
 - `zr/R` `zm/M` 代码折叠打开 
 - `:! start %` 在浏览器中运行html
 
