@@ -9,9 +9,9 @@
 
 用vim打开这个文件，然后输入`:so %`运行。更多设置信息请输入：`:h Colorizer`.
 
-高亮：`:ColorHighlight`
-取消高亮： `:ColorClear`
-自定义颜色： `let g:colorizer_custom_colors = { 'white': '#fff'}`
+高亮：`:ColorHighlight`    
+取消高亮： `:ColorClear`    
+自定义颜色： `let g:colorizer_custom_colors = { 'white': '#fff'}`    
 
 自动高亮,在_vimrc中写入下面命令：
 ```
@@ -37,7 +37,7 @@
 ### 复制粘贴类命令
 `v` 进入选择模式，`hjkl`进行选择，`y`复制，`p`粘贴。
 
-** `v` motion :operator**
+**`v` motion :operator**
 
 - `dd` 剪切一行(前面加数字可以剪切n行)  `p` 粘贴
 - `yy` 复制一行(前面加数字可以复制n行)  `p` 粘贴
