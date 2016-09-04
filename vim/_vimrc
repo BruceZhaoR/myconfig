@@ -6,6 +6,7 @@ behave mswin
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,latin-1
+set fileformat=unix
 
 if has("win32")
 set fileencoding=utf-8
