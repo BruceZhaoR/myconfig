@@ -61,7 +61,7 @@ set hlsearch                 " 搜索时高亮显示被找到的文本
 set smartindent              " 开启新行时使用智能自动缩进
 set autoindent               " 自动缩进
 set shiftwidth=2             " 设置每次缩进的列数
-set tabstop=2                " 设置tab=4
+set tabstop=4               " 设置tab=4
 set showmatch                " 自动匹配括号
 set laststatus=2             " 总是显示状态栏
 set noerrorbells             " 关闭错误信息响铃
