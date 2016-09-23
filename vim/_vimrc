@@ -73,6 +73,9 @@ set colorcolumn=+1
 
 " Numbers
 set number
+set guioptions-=T			" 隐藏工具栏
+" set guioptons-=m " 隐藏菜单栏
+" set go+=m "显示菜单栏
 
 set cursorcolumn             "光标列
 set cursorline               "光标行
