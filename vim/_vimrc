@@ -73,6 +73,8 @@ set colorcolumn=+1
 
 " Numbers
 set number
+" no BOM
+set nobomb
 set guioptions-=T			" 隐藏工具栏
 " set guioptons-=m " 隐藏菜单栏
 " set go+=m "显示菜单栏
