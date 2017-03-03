@@ -1,8 +1,12 @@
-# 神的编辑器 —— Vim 
+# Vim 配置文件 
 
-**个人配置文件: _vrimrc**
+### Windows配置文件
 
-## css hex 颜色高亮插件
+1. `_vrimrc`为Windows配置文件，放在安装的根目录下面
+2. 主题: 将colors文件夹里面的 dracula.vim移到vim74/colors/
+
+
+**css hex 颜色高亮插件**
 
 **Colorizer-0.10.vmb**
 项目地址：https://github.com/chrisbra/Colorizer
@@ -14,11 +18,19 @@
 自定义颜色： `let g:colorizer_custom_colors = { 'white': '#fff'}`    
 
 自动高亮,在_vimrc中写入下面命令：
-```
+
+```vim
 :let g:colorizer_auto_color = 1
 :let g:colorizer_auto_filetype='css,html'
 :let g:colorizer_skip_comments = 1
 ```
+
+### linux 配置文件
+
+1. 配置文件在 /etc/vim/
+2. 将vrimc替换过去
+
+
 
 ## 常用命令
 
@@ -63,6 +75,28 @@ r/R 替换光标后面的一个字符/多个字符
 - `zr/R` `zm/M` 代码折叠打开 
 - `:! start %` 在浏览器中运行html
 
+### 窗口相关命令
 
-当前日期: 2016/08/23 周二 
+- !mkdir dir 建立文件夹
+- :e path/to/file 直接打开文件
+- :vs path/to/file 垂直分割并打开文件
+- :sp path/to/file 水平分割并打开文件
+- :Vexplore 左边打开目录 :Ve ! 右边打开目录
+- :He 水平打开目录列表
 
+- :ls / :buffers 查看buffer缓冲区
+- :bnext /:bn  下一个缓冲区 :bp 上一个buffer
+- :b#  :b {buffer_name} / num 
+- :bdelete {buffer_name} / num 删除buffer
+
+- Ctrl+w+ _ / Ctrl+w+ | 最大高度
+- Ctrl+w1+ _ / Ctrl+w1+ | 最小高度
+- Ctrl+w+ = 相等
+- Ctrl+w+c 关闭窗口 :close / :q / ZZ
+- Ctrl+w+ hjkl 移动到
+- Ctrl+w+ HJKL 移动窗口
+
+
+
+
+当前日期: 2017/03/03 周五 
