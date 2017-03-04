@@ -1,6 +1,54 @@
-# 查看基本信息
-cat /proc/version
+# notes about using Linux
+
+## 更新软件包
+
+sudo apt-get update
+sudo apt-get upgrade
+
+## clean package cache
+
+sudo apt-get autoclean
+sudo apt-get clean
+sudo apt-get autoremove #remove dependent packages
+
+## remove installed package
+sudo apt-get remove <packagename>
+sudo apt-get --purge remove <package> #删除所有配置信息
+
+## input
+
+fcitx -r #启动输入法
+
+## 强制杀死进程
+
+ps -ef/-aux #查看进程
+pgrep firefox #获取进程id
+kill -s <id> 
+
+## 查看IP地址
+
+- 通过菜单->网络->详情查看ipv4
+- `ip route list`
+- `ip address show`
+
+## libreoffice 更新
+
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt-get update
+sudo apt-get dist-upgrade #更新所有包
+sudo apt-get install libreoffice libreoffice-l10nzh-cn libreoffice-help-zh-cn
+
+## 搜索特定的安装的包
+
+dpkg -l|grep "google-chrome"
+dpkg -l|grep google-chrome
+
+
+## 查看系统信息
+
 uname -a
+lsb_realse -a
+cat /proc/version
 ip route
 
 # 提升权限

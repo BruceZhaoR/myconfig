@@ -1,0 +1,13 @@
+# 配置笔记
+
+## 配置文件
+
+在 /etc/shiny-server/shiny-server.conf 里面，修改用户名和端口号
+
+## shiny apps自动运行的文件夹
+
+在 /srv/shiny-server/ 文件夹下
+
+## log文件夹
+
+/var/log/shiny-server/ 文件夹下
