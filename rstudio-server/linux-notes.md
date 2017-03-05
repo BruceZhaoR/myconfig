@@ -1,18 +1,23 @@
 # notes about using Linux
 
+## Linux访问Windows局域网共享文件夹
+
+在根目录mnt下面建立share文件夹    
+sudo mount -t cifs -o username=Bruce,password=psy2377189 //192.168.8.107/share /mnt/share
+
 ## 更新软件包
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update    
+sudo apt-get upgrade    
 
 ## clean package cache
 
-sudo apt-get autoclean
-sudo apt-get clean
+sudo apt-get autoclean    
+sudo apt-get clean    
 sudo apt-get autoremove #remove dependent packages
 
 ## remove installed package
-sudo apt-get remove <packagename>
+sudo apt-get remove <packagename>    
 sudo apt-get --purge remove <package> #删除所有配置信息
 
 ## input
@@ -21,8 +26,8 @@ fcitx -r #启动输入法
 
 ## 强制杀死进程
 
-ps -ef/-aux #查看进程
-pgrep firefox #获取进程id
+ps -ef/-aux #查看进程    
+pgrep firefox #获取进程id    
 kill -s <id> 
 
 ## 查看IP地址
@@ -33,33 +38,33 @@ kill -s <id>
 
 ## libreoffice 更新
 
-sudo add-apt-repository ppa:libreoffice/ppa
-sudo apt-get update
-sudo apt-get dist-upgrade #更新所有包
-sudo apt-get install libreoffice libreoffice-l10nzh-cn libreoffice-help-zh-cn
+sudo add-apt-repository ppa:libreoffice/ppa    
+sudo apt-get update    
+sudo apt-get dist-upgrade #更新所有包    
+sudo apt-get install libreoffice libreoffice-l10nzh-cn libreoffice-help-zh-cn    
 
 ## 搜索特定的安装的包
 
-dpkg -l|grep "google-chrome"
+dpkg -l|grep "google-chrome"    
 dpkg -l|grep google-chrome
 
 
 ## 查看系统信息
 
-uname -a
-lsb_realse -a
-cat /proc/version
+uname -a    
+lsb_realse -a    
+cat /proc/version    
 ip route
 
 # 提升权限
-sudo groupadd docker
-sudo usermod -aG docker psydata 
+sudo groupadd docker    
+sudo usermod -aG docker psydata     
 
-sudo groupadd rstudio-user
-sudo usermod -aG rstudio-user user1
+sudo groupadd rstudio-user    
+sudo usermod -aG rstudio-user user1    
 sudo usermod -aG rstudio-user user2
 
-sudo useradd rstudio
+sudo useradd rstudio    
 sudo addgroup rstudio staff
 
 # 提升Rstudio共享文件夹的权限
@@ -68,18 +73,18 @@ chown :rstudio-user /srv # 整个组改变所属
 chown psydata /srv # psydata 替代 root
 
 # 清理缓存
-sudo apt-get autoclean
-sudo apt-get clean
+sudo apt-get autoclean    
+sudo apt-get clean    
 sudo apt-get autoremove
 
 # 部署rstudio-server
-sudo apt-get install libapparmor1 libcurl4-openssl-dev libssl1.0.0 libedit2 lsb-release psmisc python-setuptools
-sudo ln -s /usr/lib/rstudio-server/bin/pandoc/ /usr/local/bin
-sudo ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin/
-wget https://github.com/jgm/pandoc-templates/archive/1.19.2.1.tar.gz
-sudo mkdir -p /opt/pandoc/templates && tar zxf 1.19.2.1.tar.gz
-sudo cp -r pandoc-templates-1.19.2.1/* /opt/pandoc/templates/
-sudo mkdir /root/.pandoc
+sudo apt-get install libapparmor1 libcurl4-openssl-dev libssl1.0.0 libedit2 lsb-release psmisc python-setuptools    
+sudo ln -s /usr/lib/rstudio-server/bin/pandoc/ /usr/local/bin    
+sudo ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin/    
+wget https://github.com/jgm/pandoc-templates/archive/1.19.2.1.tar.gz    
+sudo mkdir -p /opt/pandoc/templates && tar zxf 1.19.2.1.tar.gz    
+sudo cp -r pandoc-templates-1.19.2.1/* /opt/pandoc/templates/    
+sudo mkdir /root/.pandoc    
 sudo ln -s /opt/pandoc/templates/ /root/.pandoc/tempates
 
 sudo echo '\n\
