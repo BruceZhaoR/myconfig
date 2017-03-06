@@ -17,6 +17,7 @@
 ## log文件夹
 
 /var/log/shiny-server/ 文件夹下
+<<<<<<< HEAD
 
 ## 控制命令
 
@@ -32,4 +33,3 @@ sudo systemctl kill -s HUP --kill-who=main shiny-server
 sudo systemctl enable shiny-server
 
 ````
-
