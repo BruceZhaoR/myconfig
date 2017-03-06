@@ -2,8 +2,40 @@
 
 ## Linux访问Windows局域网共享文件夹
 
-在根目录mnt下面建立share文件夹    
-sudo mount -t cifs -o username=Bruce,password=psy2377189 //192.168.8.107/share /mnt/share
+下载samba    
+sudo apt-get install samba samba-common sambaclient
+
+创建一个文件夹并改变权限和用户组    
+mkdir /srv/share
+sudo chmod -R 777 /srv/share #让文件夹可写
+sudo chown -R :rstdio-user /srv/share # 先设置好用户组
+
+编辑配置文件，共享Linux文件夹
+sudo vim /etc/samba/smb.conf
+
+```shell
+[rstudio-server] #共享文件夹的显示名称
+	path = /srv/rstudio-server
+	available = yes
+	browseable = yes
+	public = yes
+	writable = yes
+	guest ok = yes
+````
+
+编辑完成后，需要配置用户密码，还需要查看用户组sambashare的情况
+
+touch smbpasswd    
+sudo smbpasswd -a psydata #用户访问输入密码访问    
+sudo smbpasswd -n psydata #用户psydata不需要密码访问    
+sudo samba restart        #重启服务
+
+然后就可以在Windows的文件管理界面访问了    
+`\\192.168.2.202\rstudio-server`
+
+如果Windows上面有共享的文件夹，在Linux下面可以通过    
+`smb://192.168.2.201/linux-share` 访问
+
 
 ## 更新软件包
 
@@ -65,7 +97,7 @@ sudo usermod -aG rstudio-user user1
 sudo usermod -aG rstudio-user user2
 
 sudo useradd rstudio    
-sudo addgroup rstudio staff
+sudo addgroup rstudio staff rstuido-user
 
 # 提升Rstudio共享文件夹的权限
 chmod -R 777 /srv # -R 将整个目录包括子文件权限都设置为rwxrwxrwx
