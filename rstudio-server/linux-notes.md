@@ -1,5 +1,20 @@
 # notes about using Linux
 
+## Windows远程访问Linux terminal
+
+1. Windows下载 [vnc viewer](https://www.realvnc.com/download/viewer/windows/)
+2. Linux `sudo apt install vnc4server`
+
+首先需要启动vncserver `$ vncserve` 生成桌面访问，例如 `psydata:1`. 第一次启动需要输入密码；
+
+其次，修改生成的配置文件 `~/.vnc/xstartup`. 最后一行加入 `gnome-session &`;
+
+最后，先中断，然后重启。`vncserver -kill :1` `vncserver :1 -alwaysshared`.
+
+在Windows的界面打开vnc viewer 输入IP地址加桌面编号 `192.168.2.202:1`，输入密码就能登录到terminal了。
+
+详细教程：<http://www.linuxidc.com/Linux/2012-10/73043.htm>
+
 ## Linux访问Windows局域网共享文件夹
 
 下载samba    
