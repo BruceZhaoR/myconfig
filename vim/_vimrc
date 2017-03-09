@@ -40,7 +40,7 @@ color dracula
 language messages zh_CN.UTF-8
 set fenc=utf-8
 set encoding=utf-8
-set fileformat=unix
+" set fileformat=unix
 
 set autochdir
 set guifont=Consolas:h12     " 设置字体
@@ -55,7 +55,8 @@ set hlsearch
 set smartindent
 set autoindent
 set shiftwidth=2
-set tabstop=4
+set tabstop=2
+set expandtab
 set showmatch
 set laststatus=2
 set noerrorbells
@@ -95,4 +96,3 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
