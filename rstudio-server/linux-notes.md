@@ -108,11 +108,12 @@ sudo groupadd docker
 sudo usermod -aG docker psydata     
 
 sudo groupadd rstudio-user    
-sudo usermod -aG rstudio-user user1    
+sudo usermod -aG rstudio-user user1 #将user1加到rstudio-user用户组中
 sudo usermod -aG rstudio-user user2
 
-sudo useradd rstudio    
-sudo addgroup rstudio staff rstuido-user
+sudo useradd -d /home/user -g rstudio-usesr
+sudo passwd user # 更改userd 密码
+
 
 # 提升Rstudio共享文件夹的权限
 chmod -R 777 /srv # -R 将整个目录包括子文件权限都设置为rwxrwxrwx

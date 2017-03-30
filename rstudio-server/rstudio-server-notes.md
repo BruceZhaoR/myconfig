@@ -27,6 +27,21 @@ sudo rstudio-server online
 管理组-> 找到rstudio-user ->点击属性-> 勾选新添加的用户名
 重启 rstudio-server 生效
 
+命令行操作
+sudo mkdir /home/user
+sudo useradd -d /home/user -g rstudio-server user
+sudo passwd 用户名
+sudo chown user:rstudio-server /home/user
+sudo ln -s /srv/rstudio-server/ /home/user/ #与user共享
+sudo chmod -R 777 /home/user/
+chmod -R a+wrx /home/user/ # 或者这样
+
+sudo restart rstudio-server
+
+sudo userdel 用户名
+sudo groupdel 用户组名
+sudo usermod -aG rstudio-user user
+
 ## 共享文件夹
 sudo ln -s /srv/rstudio-server/ /home/psydata/ #与psydata用户共享
 sudo ln -s /srv/rstudio-server/ /home/sophiazj/ #与Sophiazj共享

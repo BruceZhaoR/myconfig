@@ -10,4 +10,5 @@
 
 ## docker基本命令
 
+docker start minio1
 
