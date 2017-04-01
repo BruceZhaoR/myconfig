@@ -29,17 +29,17 @@ sudo rstudio-server online
 
 命令行操作
 sudo mkdir /home/user
-sudo useradd -d /home/user -g rstudio-server user
+sudo useradd -d /home/user -g rstudio-user user
 sudo passwd 用户名
-sudo chown user:rstudio-server /home/user
+sudo chown user:rstudio-user /home/user
 sudo ln -s /srv/rstudio-server/ /home/user/ #与user共享
 sudo chmod -R 777 /home/user/
 chmod -R a+wrx /home/user/ # 或者这样
 
 sudo restart rstudio-server
 
-sudo userdel 用户名
-sudo groupdel 用户组名
+sudo userdel 用户名 	#删除用户名
+sudo groupdel 用户组名  #删除组名
 sudo usermod -aG rstudio-user user
 
 ## 共享文件夹
