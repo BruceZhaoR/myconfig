@@ -28,24 +28,19 @@ language messages zh_CN.UTF-8
 " set fileencoding=utf-8
 
 " 显示文件编码类型
-if has("statusline")
- set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-endif
+set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %P
 
-
-
+set nocompatible             " 关闭 vi 兼容模式
 filetype on
 syntax on
 color dracula
 language messages zh_CN.UTF-8
-set fenc=utf-8
-set encoding=utf-8
-" set fileformat=unix
 
 set autochdir
 set guifont=Consolas:h14     " 设置字体
 set lines=30 columns=85
 set nobackup
+set noundofile
 set confirm
 set history=100
 set showcmd

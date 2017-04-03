@@ -52,6 +52,7 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+set nocompatible
 filetype on
 syntax on
 color dracula
@@ -64,6 +65,7 @@ set autochdir
 set guifont=Noto\ Sans\ Mono\ CJK\ SC\ 11
 set lines=24 columns=100
 set nobackup
+set noundofile
 set confirm
 set history=100
 set showcmd
@@ -85,6 +87,6 @@ set guioptions-=T
 
 let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax
 
-if has("statusline")
- set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-endif
+" 显示文件编码类型
+set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %P
+
