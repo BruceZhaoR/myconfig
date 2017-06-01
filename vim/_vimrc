@@ -30,6 +30,7 @@ language messages zh_CN.UTF-8
 " 显示文件编码类型
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %P
 
+set ai
 set nocompatible             " 关闭 vi 兼容模式
 filetype on                  " 侦测文件类型
 syntax on                    " 自动语法高亮

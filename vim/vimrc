@@ -52,8 +52,10 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+set ai
+filetype plugin indent on
 set nocompatible
-filetype on
+" filetype on
 syntax on
 color dracula
 language messages zh_CN.UTF-8
