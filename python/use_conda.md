@@ -15,22 +15,27 @@ conda info
 conda config --show
 ```
 
-采用清华大学的Anaconda的镜像：
+采用清华大学的Anaconda的镜像： <https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/>
 
 ```shell
-conda config --add channels https://mirrors.tuan.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuan.tsinghua.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 conda config --add channels r
-conda config --set show_channe_urls yes
+conda config --set show_channel_urls yes
 ```
 
-输完上面命令后，还需要到用户路径下找到`.condarc`文件，用`#`注释掉channels下面的`- defaults`
+**注意：** 输完上面命令后，还需要到用户路径下找到`~/.condarc`文件，用`#`注释掉channels下面的`- defaults`
 
 可以把pip的下载方式pypi的镜像换成tuan的或者ustc的，参考对应的镜像网站上面的help。
+
+1. 中科大: <https://lug.ustc.edu.cn/wiki/mirrors/help/pypi>
+2. 清华: <https://mirrors.tuna.tsinghua.edu.cn/help/pypi/>
 
 ### 2.更新与下载包
 
 ```shell
+conda --help
 conda update conda # 更新coda版本
 conda list
 conda install pandas
@@ -45,15 +50,17 @@ conda install jupyter #  下载jupyter notebook
 
 #### R配置方法
 
-R配置方法请见：    
+R配置方法请见：
+
 1. <https://github.com/IRkernel/IRkernel>
 2. <https://irkernel.github.io>
 
 注意：在安装`IRkernel`包的时候用devtools安装不了，那么就去release下载tar.gz压缩包，然后转到相应文件目录下采用`R CMD INSTALL IRkernel-0.8.6.tar.gz`的方式安装。
 
-> in R 3.4  IRkernel::installspec(name = "ir34", displayname = "R 3.4") 
+> in R 3.4  IRkernel::installspec(name = "ir34", displayname = "R-3.4") 
 
-配置完后，kernel会放在这里：`C:\Users\Bruce\AppData\Roaming\jupyter\kernels`。可以去对应地方修改json的配置文件。
+配置完后，kernel会放在这里：`C:\Users\Bruce\AppData\Roaming\jupyter\kernels`。可以去对应地方修改json的配置文件。    
+`user = FALSE` 全局安装，安装文件在 `C:\ProgramData\jupyter\kernels`.
 
 #### Python27配置方法
 
