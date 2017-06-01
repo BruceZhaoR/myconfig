@@ -21,7 +21,7 @@ conda config --show
 conda config --add channels https://mirrors.tuan.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuan.tsinghua.edu.cn/anaconda/cloud/msys2/
 conda config --add channels r
-conda confit --set show_channe_urls yes
+conda config --set show_channe_urls yes
 ```
 
 输完上面命令后，还需要到用户路径下找到`.condarc`文件，用`#`注释掉channels下面的`- defaults`
