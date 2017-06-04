@@ -1,82 +1,97 @@
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
 
-"处理文本中显示乱码 start
-set fenc=utf-8
-set encoding=utf-8
-"set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,latin-1
-set fileformat=dos
+" windows setting:{
 
-if has("win32")
-set fileencoding=utf-8
-else
-set fileencoding=utf-8
-endif
-"处理文本中显示乱码 end
+    source $VIMRUNTIME/vimrc_example.vim
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
 
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-"处理consle输出乱码
-" language messages zh_CN.UTF-8
-"中文乱码结束
+    "处理文本中显示乱码 start
+    set fenc=utf-8
+    set encoding=utf-8
+    set fileencodings=utf-8,ucs-bom,gb18030,cp936,latin-1
+    set fileformat=dos
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+    if has("win32")
+    set fileencoding=utf-8
+    else
+    set fileencoding=utf-8
+    endif
 
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-call vundle#begin('$HOME/vimfiles/bundle/')
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.UTF-8
+    "处理文本中显示乱码 end
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" end windows setting }
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'gabrielelana/vim-markdown'
 
-" status/tabline from github vim-ariline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Setup Vim-Plug Support {
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+    call plug#begin('$HOME/vimfiles/bundle/')
+" }
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Bundles {
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+    
+    " On-demand loading
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    
+    " On-demand for filetype
+    " Code to execute when the plugin is lazily loaded on demand
+    Plug 'gabrielelana/vim-markdown', { 'for': ['markdown', 'md'] }
+    autocmd! User vim-markdown echom 'markdown is now loaded!'
+    
+    " airline statusline"
+    Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    
+    Plug 'ryanoasis/vim-devicons'
+    
+    
+    " Initialize plugin system
+    call plug#end()
+    
+    filetype plugin indent on " required
+" }
+
+" Bundles setting {
+    set guifont=DroidSansMonoForPowerline\ NF:h12
+    
+    " required if using https://github.com/bling/vim-airline
+    let g:airline_powerline_fonts=1
+    set laststatus=2 " Always display the statusline in all windows
+    set showtabline=2 " Always display the tabline, even if there is only one tab
+    set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+    
+    "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
+    "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 1
+    
+    "设置切换Buffer快捷键"
+    nnoremap <C-N> :bn<CR>
+    nnoremap <C-P> :bp<CR>
+    
+    " 关闭状态显示空白符号计数,这个对我用处不大"
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
+    let g:airline#extensions#wordcount#enabled = 0
+    let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+    let g:airline_skip_empty_sections = 1
+  
+" }
+
+
 
 " statusline
 "set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %P
 
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-" Airline:
-"
-let g:airline_theme='simple'
-set guifont=Noto\ Mono\ for\ Powerline:h12
-let g:airline_powerline_fonts = 1
-"打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
-"我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" custom gui setting:{
 
- "设置切换Buffer快捷键"
- nnoremap <C-N> :bn<CR>
- nnoremap <C-P> :bp<CR>
-
-" 关闭状态显示空白符号计数,这个对我用处不大"
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#whitespace#symbol = '!'
-let g:airline#extensions#wordcount#enabled = 0
-let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
-let g:airline_skip_empty_sections = 1
-
-
-
-
-
-
-set ai 											 " 自动缩进
+set ai                        " 自动缩进
 syntax on                    " 自动语法高亮
 color dracula                " 设定配色方案
 set number                   " 显示行号
@@ -108,7 +123,9 @@ set textwidth=80
 set colorcolumn=+1
 
 let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax
+" end custom gui setting }
 
+" diff setting:{
 set diffexpr=MyDiff()
 function MyDiff()
   let opt = '-a --binary '
@@ -138,4 +155,4 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
+" end diff setting }
