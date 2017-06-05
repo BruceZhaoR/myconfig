@@ -1,3 +1,6 @@
+
+Windows Download lua for neocomplete <http://joedf.ahkscript.org/LuaBuilds/>
+
 ## for writing
 
 * reedes/vim-wordy
