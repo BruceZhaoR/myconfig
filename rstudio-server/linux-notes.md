@@ -1,5 +1,14 @@
 # notes about using Linux
 
+## Linux 后台任务管理
+
+1. & 命令加在最后，后台执行： `nohup bin/sparkling-shell --num-executors 3 --executor-memory 2g --master yarn-client > ./test.out &`
+2. ctrl+z：将一个前台正在执行的命令放到后台，并且出于暂停状态
+3. `jobs -l` 查看后台运行的任务； `ps -au`
+4. `fg`后台命令调到前台：`fg $jobnum` jobnum是命令编号而不是pid
+5. 杀死进程：`kill -9 pid` / `ctrl + c`
+
+
 ## Windows远程访问Linux terminal
 
 1. Windows下载 [vnc viewer](https://www.realvnc.com/download/viewer/windows/)
