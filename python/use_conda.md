@@ -69,7 +69,7 @@ R配置方法请见：
 
 conda create -n py27 python=2.7 ipykernel pandas scikit-learn 
 source activate py27               # 激活环境
-python -m ipykernel install --user # 配置kernel
+python -m ipykernel install --user --name myenv --display-name "root" # 配置kernel
 ```
 
 ```shell
