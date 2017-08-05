@@ -30,7 +30,15 @@ conda config --set show_channel_urls yes
 可以把pip的下载方式pypi的镜像换成tuan的或者ustc的，参考对应的镜像网站上面的help。
 
 1. 中科大: <https://lug.ustc.edu.cn/wiki/mirrors/help/pypi>
-2. 清华: <https://mirrors.tuna.tsinghua.edu.cn/help/pypi/>
+2. 清华: <https://mirrors.tuna.tsinghua.edu.cn/help/pypi/> (推荐)
+
+Win10 创建: `~\AppData\Roaming\pip\pip.ini` 内容如下：
+
+```shell
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+format = columns
+```
 
 ### 2.更新与下载包
 
@@ -42,7 +50,7 @@ conda install pandas
 conda install scikit-learn
 conda install jupyter #  下载jupyter notebook
 ```
-更多命名请见conda cheetsheet
+更多命令请见conda cheetsheet
 
 ### 3.不同环境的配置
 
