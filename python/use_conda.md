@@ -4,7 +4,7 @@
 
 去官网下载对应的anaconda(3.6-64bit)安装包。如果电脑储存空间有限，建议下载Miniconda。miniconda只会安装conda和基础Python包，像pandas和scikit-learn这些后面用到的话，直接一行命名安装`conda install pandas scikit-learn` 默认安装到当前环境，这个后面再详细记录说明。
 
-#### 配置包的下载镜像网点
+#### 1.1 配置包的下载镜像网点
 
 有用的命令: 
 
@@ -26,6 +26,8 @@ conda config --set show_channel_urls yes
 ```
 
 **注意：** 输完上面命令后，还需要到用户路径下找到`~/.condarc`文件，用`#`注释掉channels下面的`- defaults`
+
+#### 1.2 配置pip加速镜像
 
 可以把pip的下载方式pypi的镜像换成tuan的或者ustc的，参考对应的镜像网站上面的help。
 
