@@ -12,6 +12,6 @@ pip install --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tens
 pip install keras
 ```
 
-- 镜像加速方法： <./conda.md>
+- 镜像加速方法： (user_conda.md)[./use_conda.md]
 - 官方安装教程：<https://www.tensorflow.org/install/install_windows>
 - GitHub安装包说明： <https://github.com/tensorflow/tensorflow#installation>
