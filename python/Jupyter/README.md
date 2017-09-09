@@ -1,3 +1,3 @@
-**Put the file in the following location**<br>
+**Put the file in the following location**
 
 ~/.jupyter/custom/custom.css

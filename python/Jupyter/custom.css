@@ -13,7 +13,7 @@
 
 body, body.notebook_app.command_mode {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-  font-family: -apple-system, "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
 
 /* 
@@ -26,20 +26,22 @@ body, body.notebook_app.command_mode {
 */
 
 .CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
-    font-family: "RobotoMono NF", Monaco, monospace;
-    font-size: 14pt;
+    font-family: "RobotoMono NF", "Arial", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 12pt;
 }
-.terminal-app .terminal { line-height: 1.3em; }
+.terminal-app .terminal { line-height: 1.2em; }
 div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.completions select, div.container pre {
-  font-family: "RobotoMono NF", Monaco, monospace;
+  font-family: "RobotoMono NF", "Arial", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
 }
 div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre {
     font-size: 12pt;
-	/* padding-bottom: 10px; */
+    padding-bottom: 3px;
+    font-weight: 300;
+    color: #D3D3D3;
 }
 
 div.prompt, div.tooltiptext pre {
-    font-family: "RobotoMono NF", Monaco, monospace;
+    font-family: "RobotoMono NF", "Arial", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
     font-size: 8pt;
 }
 
@@ -129,7 +131,7 @@ body.notebook_app > #header { display: block !important; }
 body > #header .header-bar { background: #444; }
 #header .navbar-brand { display: none; }
 #header .filename { margin-left: 0; margin-right: 2em; }
-#header .current_kernel_logo { width: 24px; height: 24px; }
+#header .current_kernel_logo { width: 64px; height: 64px; }
 span.save_widget span.filename:hover {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
@@ -282,8 +284,8 @@ span.save_widget span.filename:hover {
 */
 
 div#notebook .text_cell_render {
-  font-size: 16.25px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.25;
 }
 
@@ -412,15 +414,15 @@ div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
 .CodeMirror span.cm-atom {color: #CF6A4C;}
 .CodeMirror span.cm-number {color: #CF6A4C;}
 
-.CodeMirror span.cm-property {color: #F8F8F8;}
+.CodeMirror span.cm-property {color: #D3D3D3;}
 .CodeMirror span.cm-attribute {color: #198844;}
-.CodeMirror span.cm-keyword {color: #9bb19e; font-weight: normal;}
+.CodeMirror span.cm-keyword {color: #00A000; font-weight: normal;}
 .CodeMirror span.cm-string {color: #8F9D6A;}
 .CodeMirror span.cm-string-2 {color: #E9C062;} /* regexp */
 .CodeMirror span.cm-operator {color: #CDA869;}
 .CodeMirror span.cm-builtin {color: #A36AC7;}
 
-.CodeMirror span.cm-variable {color: #F8F8F8;}
+.CodeMirror span.cm-variable {color: #D3D3D3;}
 .CodeMirror span.cm-variable-2 {color: #25ab2f;}
 .CodeMirror span.cm-variable-3 {color: #8bc19e;} 
 .CodeMirror span.cm-def {color: #9B703F;}
