@@ -28,7 +28,6 @@
 
 " Setup Vim-Plug Support {
     set nocompatible              " be iMproved, required
-    " filetype off                  " required
     call plug#begin('$HOME/vimfiles/bundle')
 " }
 
@@ -143,6 +142,7 @@
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType go setlocal omnifunc=gocomplete#Complete
     " Plugin key-mappings.
     " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
     imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -167,6 +167,17 @@
     let g:neosnippet#enable_snipmate_compatibility = 1
     " Tell Neosnippet about the other snippets
     let g:neosnippet#snippets_directory='$HOME/vimfiles/bundle/vim-snippets/snippets'
+    " vim-go
+    let g:go_fmt_command = "goimports"
+    let g:go_autodetect_gopath = 1
+    let g:go_list_type = "quickfix"
+    
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_extra_types = 1
+    let g:go_highlight_generate_tags = 1
 " }
 
 
@@ -178,7 +189,6 @@
 " custom gui setting:{
 
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
-set backspace=indent,eol,start  " make that backspace key work the way it should
 set vb
 set nospell                  " 关闭拼写检查 
 set ai                       " 自动缩进
@@ -201,18 +211,20 @@ set incsearch                " do incremental searching
 set ignorecase smartcase     " 搜索时忽略大小写
 set hlsearch                 " 搜索时高亮显示被找到的文本
 set smartindent              " 开启新行时使用智能自动缩进
-set shiftwidth=2             " 设置每次缩进的列数
-set tabstop=2                " 设置tab=2
+set shiftwidth=4             " 设置每次缩进4列数
+set tabstop=4                " 设置tab=4
 set expandtab                " No tabs in the source file
 set smarttab                 " 解决 shiftwidth 和 tabstop 不等时的麻烦
 set list                     " 显示tab 和 空格
-set listchars=tab:->,space:·,eol:↴
+set listchars=tab:->,space:·,eol:$
 set showmatch                " 自动匹配括号
 set noerrorbells             " 关闭错误信息响铃
 set novisualbell             " 关闭使用可视响铃代替呼叫
 
-" For Python
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
+" For R 
+autocmd BufNewFile,BufRead *.R setlocal tabstop=2 shiftwidth=2 expandtab
+" For go show by default 4 spaces for a tab
+"autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " Make it obvious where 80 characters is
 set textwidth=80

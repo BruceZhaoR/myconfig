@@ -2,8 +2,14 @@
 
 ### Windows配置文件
 
+Windows  将`vimfiles`放在`~\vimfiles`，将`lua53.dll`放在`gvim.exe`同一个地方，一般在`echo $VIMRUNTIM`，也就是vim的安装路径
+
+字体`Droid Sans Mono for Powerline`需要双击安装
+
 1. `_vrimrc`为Windows配置文件，放在安装的根目录下面
-2. 主题: 将colors文件夹里面的 dracula.vim移到vim74/colors/
+2. 主题: 将colors文件夹里面的 dracula.vim移到`vim80/colors/`
+
+**配置完成后，在vim运行`PlugInstall`即可完成插件下载**
 
 
 **css hex 颜色高亮插件**
