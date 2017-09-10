@@ -52,7 +52,8 @@
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    
+    " Vim-go
+    Plug 'fatih/vim-go'
     
     " Initialize plugin system
     call plug#end()
@@ -201,10 +202,17 @@ set ignorecase smartcase     " 搜索时忽略大小写
 set hlsearch                 " 搜索时高亮显示被找到的文本
 set smartindent              " 开启新行时使用智能自动缩进
 set shiftwidth=2             " 设置每次缩进的列数
-set tabstop=2               " 设置tab=2
+set tabstop=2                " 设置tab=2
+set expandtab                " No tabs in the source file
+set smarttab                 " 解决 shiftwidth 和 tabstop 不等时的麻烦
+set list                     " 显示tab 和 空格
+set listchars=tab:->,space:·,eol:↴
 set showmatch                " 自动匹配括号
 set noerrorbells             " 关闭错误信息响铃
 set novisualbell             " 关闭使用可视响铃代替呼叫
+
+" For Python
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 
 " Make it obvious where 80 characters is
 set textwidth=80
