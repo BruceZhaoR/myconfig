@@ -1,4 +1,4 @@
-html_notebook: 
+html_notebook:
     highlight: pygments
     theme: flatly
     toc: yes
@@ -6,6 +6,5 @@ html_notebook:
     df_print: paged
     toc_float:
       collapsed: false
-    includes:
-      before_body: theme.html
- 
+    css: theme.css
+

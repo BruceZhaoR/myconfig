@@ -200,7 +200,7 @@ set guioptions-=T            " 隐藏工具栏
 " set guioptions-=m              " 隐藏菜单栏
 set autochdir                " 自动切换为当前文件所在的目录
 " set guifont=Consolas:h13     " 设置字体
-set lines=30 columns=88      " 设置启动窗口大小30*85
+set lines=30 columns=85      " 设置启动窗口大小30*85
 set nobackup                 " 覆盖文件时不备份
 set noundofile
 set confirm                  " 设置未保存时候，弹出确认
