@@ -19,6 +19,18 @@
     color: #ffffff;
     background-color: #18bc9c;
 }
+  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #ffffff;
+    background-color: #18bc9c;
+}
+
+p {
+    margin: 1.2em 0;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 1.2em;
+    margin-bottom: 1.3em;
+}
 
 body {
   font-family:-apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
