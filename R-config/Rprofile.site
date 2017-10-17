@@ -27,9 +27,9 @@ Sys.setenv(TZ="Asia/Shanghai")
 # Give a fortune cookie, but only to interactive sessions
 # (This would need the fortunes package to be installed.)
   if (interactive()) { 
-    fortunes::fortune()
     suppressMessages(require(dplyr))
     suppressMessages(require(stringr))
     suppressMessages(require(readr))
     suppressMessages(require(ggplot2))
+    fortunes::fortune()
   }
