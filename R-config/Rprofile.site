@@ -1,6 +1,7 @@
 # Things you might want to change
 
 Sys.setenv(TZ="Asia/Shanghai")
+.libPaths("E:/R/library")
 
 # options(papersize="a4")
 # options(editor="notepad")
@@ -13,10 +14,14 @@ Sys.setenv(TZ="Asia/Shanghai")
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
 
-# set a CRAN mirror
+
+# set a CRAN mirror and default startup packages
  local({r <- getOption("repos")
+       dp <- getOption("defaultPackages")
+       my_dp <- c(dp, "dplyr", "stringr", "readr", "ggplot2")
        r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"
      # r["CRANextra"] <- "https://mirrors.aliyun.com/CRAN/"
+       options(defaultPackages = my_dp)
        options(repos=r)})
 
 # Give a fortune cookie, but only to interactive sessions
