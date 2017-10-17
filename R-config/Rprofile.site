@@ -31,5 +31,5 @@ Sys.setenv(TZ="Asia/Shanghai")
     suppressMessages(require(dplyr))
     suppressMessages(require(stringr))
     suppressMessages(require(readr))
-    supressMessages(require(ggplot2))
+    suppressMessages(require(ggplot2))
   }
