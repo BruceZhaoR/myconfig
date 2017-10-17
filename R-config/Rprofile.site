@@ -17,14 +17,19 @@ Sys.setenv(TZ="Asia/Shanghai")
 
 # set a CRAN mirror and default startup packages
  local({r <- getOption("repos")
-       dp <- getOption("defaultPackages")
-       my_dp <- c(dp, "dplyr", "stringr", "readr", "ggplot2")
+     # dp <- getOption("defaultPackages")
+     # my_dp <- c(dp, "dplyr", "stringr", "readr", "ggplot2")
        r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"
      # r["CRANextra"] <- "https://mirrors.aliyun.com/CRAN/"
-       options(defaultPackages = my_dp)
+     # options(defaultPackages = my_dp)
        options(repos=r)})
 
 # Give a fortune cookie, but only to interactive sessions
 # (This would need the fortunes package to be installed.)
-  if (interactive()) 
+  if (interactive()) { 
     fortunes::fortune()
+    suppressMessages(require(dplyr))
+    suppressMessages(require(stringr))
+    suppressMessages(require(readr))
+    supressMessages(require(ggplot2))
+  }
