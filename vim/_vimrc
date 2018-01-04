@@ -53,6 +53,9 @@
     Plug 'ryanoasis/vim-devicons'
     " Vim-go
     Plug 'fatih/vim-go'
+
+    " nord theme
+    Plug 'arcticicestudio/nord-vim'
     
     " Initialize plugin system
     call plug#end()
@@ -178,6 +181,17 @@
     let g:go_highlight_methods = 1
     let g:go_highlight_extra_types = 1
     let g:go_highlight_generate_tags = 1
+
+    " nord theme
+    " 注释斜体
+    let g:nord_italic_comments = 1
+    " 统一状态栏
+    let g:nord_uniform_status_lines = 1
+    " 注释对比度
+    let g:nord_comment_brightness = 8
+    " 统一diff 背景色
+    let g:nord_uniform_diff_background = 1
+    
 " }
 
 
@@ -193,7 +207,8 @@ set vb
 set nospell                  " 关闭拼写检查 
 set ai                       " 自动缩进
 syntax on                    " 自动语法高亮
-color dracula                " 设定配色方案
+"color dracula                " 设定配色方案
+colorscheme nord 
 set number                   " 显示行号
 set nobomb
 set guioptions-=T            " 隐藏工具栏
