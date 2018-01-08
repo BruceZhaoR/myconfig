@@ -1,0 +1,15 @@
+{
+    "git.path": "C:\\Git\\bin\\git.exe",
+    "workbench.iconTheme": "vscode-icons",
+    "r.rterm.windows": "E:\\R\\R-3.4.3\\bin\\x64\\R.exe",
+    "workbench.colorTheme": "Nord",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "editor.fontFamily": "'Source Han Sans CN', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.mouseWheelZoom": true,
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'Source Han Sans CN', 'Microsoft YaHei', 'Source Han Serif CN', SimSun, sans-serif",
+    "editor.letterSpacing": 0.6,
+    "explorer.confirmDelete": false
+}
