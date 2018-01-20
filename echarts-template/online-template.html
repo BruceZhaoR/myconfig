@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echarts Online Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fullscreen Landscape on iOS -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- echarts js here -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=3.0&ak=输入您的密钥></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+</head>
+
+<body>
+    <div class="row" style="margin:0;">
+        <div class="col-md-12" id="div_1" style="padding:0;">
+            <!-- 为ECharts准备一个Dom -->
+            <div id="container_1" style="height: 100%"></div>
+            <!-- 代码部分 -->
+            <script type="text/javascript">
+                var dom_1 = document.getElementById("container_1");
+                // 动态获取dom高度
+                var dom_1_resize = function () {
+                    var window_height = window.innerHeight;
+                    dom_1.style.height = (window_height - 2) + "px";
+                };
+                dom_1_resize();
+                var chart_1 = echarts.init(dom_1);
+
+                option = {
+
+                };
+
+
+                if (option && typeof option === "object") {
+                    chart_1.setOption(option, true);
+                };
+
+                // 图表自适应窗口
+                window.addEventListener('resize', function () {
+                    dom_1_resize();
+                    chart_1.resize();
+                });
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

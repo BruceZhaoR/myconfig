@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echarts Local Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fullscreen Landscape on iOS -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- echarts js here -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=输入您的密钥></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+    <title>Shanghai</title>
+</head>
+  
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 600px"></div>
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var dom_resize = function () {
+            var window_height = window.innerHeight;
+            dom.style.height = (window_height - 2) + "px";
+        };
+        dom_resize();
+        var myChart = echarts.init(dom);
+
+        // gedata
+        $.getJSON('../data/e_26.json', function (data) {
+            var car_lines = data;
+            // debugger
+            myChart.setOption(option = {
+                bmap: {
+                    center: [121.473488, 31.213329],
+                    zoom: 12,
+                    roam: true,
+                    silent: true,
+                    mapStyle: {
+                        styleJson: [{
+                            "featureType": "water",
+                            "elementType": "all",
+                            "stylers": {
+                                "color": "#031628"
+                            }
+                        }, {
+                            "featureType": "land",
+                            "elementType": "geometry",
+                            "stylers": {
+                                "color": "#000102"
+                            }
+                        }, {
+                            "featureType": "highway",
+                            "elementType": "geometry.fill",
+                            "stylers": {
+                                "visibility": "on",
+                                "color": "#000000",
+                                "lightness": -10
+                            }
+                        }, {
+                            "featureType": "highway",
+                            "elementType": "geometry.stroke",
+                            "stylers": {
+                                "color": "#0b3d60",
+                                "lightness": 2
+                            }
+                        }, {
+                            "featureType": "highway",
+                            "elementType": "labels",
+                            "stylers": {
+                                "visibility": "off"
+                            }
+                        }, {
+                            "featureType": "arterial",
+                            "elementType": "geometry.fill",
+                            "stylers": {
+                                "color": "#000000",
+                                "lightness": -10
+                            }
+                        }, {
+                            "featureType": "arterial",
+                            "elementType": "geometry.stroke",
+                            "stylers": {
+                                "color": "#0b3d60",
+                                "lightness": 0
+                            }
+                        }, {
+                            "featureType": "local",
+                            "elementType": "geometry",
+                            "stylers": {
+                                "color": "#000000"
+                            }
+                        }, {
+                            "featureType": "railway",
+                            "elementType": "all",
+                            "stylers": {
+                                "visibility": "off"
+                            }
+                            // }, {
+                            //     "featureType": "subway",
+                            //     "elementType": "geometry",
+                            //     "stylers": {
+                            //         "lightness": -50,
+                            //         "weight": 0.3
+                            //     }
+                            // }, {
+                            //     "featureType": "subway",
+                            //     "elementType": "labels.icon",
+                            //     "stylers": {
+                            //         "visibility": "off"
+                            //     }
+                        }, {
+                            "featureType": "subway",
+                            "elementType": "all",
+                            "stylers": {
+                                "visibility": "off"
+                            }
+                        }, {
+                            "featureType": "building",
+                            "elementType": "geometry.fill",
+                            "stylers": {
+                                "color": "#000000"
+                            }
+                        }, {
+                            "featureType": "all",
+                            "elementType": "labels.text.fill",
+                            "stylers": {
+                                "color": "#857f7f"
+                            }
+                        }, {
+                            "featureType": "all",
+                            "elementType": "labels.text.stroke",
+                            "stylers": {
+                                "color": "#000000"
+                            }
+                        }, {
+                            "featureType": "building",
+                            "elementType": "geometry",
+                            "stylers": {
+                                "color": "#022338",
+                                "lightness": -5
+                            }
+                        }, {
+                            "featureType": "green",
+                            "elementType": "geometry",
+                            "stylers": {
+                                "color": "#062032"
+                            }
+                        }, {
+                            "featureType": "boundary",
+                            "elementType": "all",
+                            "stylers": {
+                                "color": "#465b6c"
+                            }
+                        }, {
+                            "featureType": "manmade",
+                            "elementType": "all",
+                            "stylers": {
+                                "color": "#022338"
+                            }
+                        }, {
+                            "featureType": "label",
+                            "elementType": "all",
+                            "stylers": {
+                                "color": "#022338",
+                                "visibility": "off"
+                            }
+                        }, {
+                            "featureType": "poilabel",
+                            "elementType": "labels.icon",
+                            "stylers": {
+                                "visibility": "off"
+                            }
+                        }]
+                    }
+                },
+                title: {
+                    text: '2017年李总所有行程分布图',
+                    left: 'center',
+                    textStyle: {
+                        color: '#fff',
+                        fontWeight: 'bold',
+                        fontSize: 26
+                    }
+                },
+                series: [{
+                    type: 'lines',
+                    coordinateSystem: 'bmap',
+                    blendMode: 'lighter',
+                    polyline: true,
+                    silent: true,
+                    data: car_lines,
+                    // large: true,
+                    lineStyle: {
+                        // normal: {
+                        color: '#1B9E77',
+                        opacity: 0.4,
+                        width: 3.5,
+                        // curveness: 0.2,
+                        // }
+                    },
+                    progressiveThreshold: 500,
+                    progressive: 200
+                }, {
+                    type: 'lines',
+                    coordinateSystem: 'bmap',
+                    polyline: true,
+                    data: car_lines,
+                    lineStyle: {
+                        width: 0
+                    },
+                    effect: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0, color: '#D95F02' // 0% 处的颜色
+                            }, {
+                                offset: 1, color: '#eee' // 100% 处的颜色
+                            }],
+                            globalCoord: true // 缺省为 false
+                        },
+                        // period: 6,
+                        constantSpeed: 20,
+                        show: true,
+                        trailLength: 0.1,
+                        //  symbol:  'pin',
+                        symbolSize: 3
+                    },
+                    zlevel: 1
+                }],
+            });
+        });
+
+        // listen window resize
+        window.addEventListener("resize", function () {
+            dom_resize();
+            myChart.resize();
+        });
+    </script>
+</body>
+
+</html>
