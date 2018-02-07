@@ -34,7 +34,7 @@ conda config --set show_channel_urls yes
 1. 中科大: <https://lug.ustc.edu.cn/wiki/mirrors/help/pypi>
 2. 清华: <https://mirrors.tuna.tsinghua.edu.cn/help/pypi/> (推荐)
 
-Win10 创建: `~\AppData\Roaming\pip\pip.ini` 内容如下：
+Win10 创建: `~\AppData\Roaming\pip\pip.ini` （或者`~/.pip/pip.conf`） 内容如下：
 
 ```shell
 [global]
