@@ -9,10 +9,11 @@ Sys.setenv(TZ = "Asia/Shanghai")
 # set the default help type
 # options(help_type="text")
 options(help_type="html")
+options(usethis.full_name = "Wei Zhao")
 
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
-.libPaths("E:/R/library")
+.libPaths("E:/R/R-3.5-library")
 
 # set a CRAN mirror
 # "https://mirrors.aliyun.com/CRAN/"
