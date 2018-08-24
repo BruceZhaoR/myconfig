@@ -14,10 +14,15 @@ Windows：
 - InteliSense for CSS Class names
 - Markdown Shortcuts
 - Markdown+Math
-- Nord
+- dracula Official
 - Open HTML in Deafult Browser
+- Beautify
+- Chinese Language
 - Python
-- R
+- Intellicode
+- VS Code Jupyter notebook preview
 - Vim
 - vscode-icons
+- GitLens
+-
 
