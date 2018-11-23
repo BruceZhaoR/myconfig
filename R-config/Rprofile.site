@@ -10,6 +10,7 @@ Sys.setenv(TZ = "Asia/Shanghai")
 # options(help_type="text")
 options(help_type="html")
 options(usethis.full_name = "Wei Zhao")
+options(download.file.method = "libcurl")
 
 # set a site library
 # .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
