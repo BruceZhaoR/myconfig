@@ -24,5 +24,6 @@ Windows：
 - Vim
 - vscode-icons
 - GitLens
--
+- MySQL
+- HTML CSS Support
 

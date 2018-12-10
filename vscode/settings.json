@@ -43,4 +43,7 @@
     "telemetry.enableTelemetry": false,
     "gitlens.historyExplorer.enabled": true,
     "python.workspaceSymbols.ctagsPath": "E:\\ProgramFiles\\ctags58\\ctags.exe",
+    "python.jediEnabled": false,
+    "breadcrumbs.enabled": true,
+    "extensions.ignoreRecommendations": false,
 }
