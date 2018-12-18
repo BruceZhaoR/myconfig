@@ -54,8 +54,9 @@
     " Vim-go
     Plug 'fatih/vim-go'
 
-    " nord theme
-    Plug 'arcticicestudio/nord-vim'
+    "" nord theme
+    "plug 'arcticicestudio/nord-vim'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     
     " Initialize plugin system
     call plug#end()
@@ -64,13 +65,14 @@
 " }
 
 " Bundles setting {
+    " set guifont=DroidSansMonoForPowerline\ NF:h12
     " 在github/ryanoasis/nerdfont下载相应的文件
     set guifont=Inconsolata\ NF:h14
     set guifontwide=DejaVu\ Sans\ Mono:h12
     
     " required if using https://github.com/bling/vim-airline
     let g:airline_powerline_fonts=1
-    let g:airline_theme='luna'
+    let g:airline_theme='dracula'
     set laststatus=2 " Always display the statusline in all windows
     set showtabline=2 " Always display the tabline, even if there is only one tab
     set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -91,7 +93,7 @@
     " Just show the filename (no path) in the tab
     let g:airline#extensions#tabline#fnamemod = ':t'
     " let g:airline_section_c = '%<%F\ %{WebDevIconsGetFileTypeSymbol()}'
-    let g:airline_section_z = airline#section#create(['%3p%% ',"\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+    let g:airline_section_z = airline#section#create(['%3p%% ',"\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) 
     "let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
     let g:airline_skip_empty_sections = 1
     let g:airline_detect_spell = 0
@@ -184,16 +186,25 @@
     let g:go_highlight_extra_types = 1
     let g:go_highlight_generate_tags = 1
 
-    " nord theme
-    " 注释斜体
-    let g:nord_italic_comments = 1
-    " 统一状态栏
-    let g:nord_uniform_status_lines = 1
-    " 注释对比度
-    let g:nord_comment_brightness = 8
-    " 统一diff 背景色
-    let g:nord_uniform_diff_background = 1
+    "" nord theme use dracula instead
+    "" 注释斜体
+    "let g:nord_italic_comments = 1
+    "" 统一状态栏
+    "let g:nord_uniform_status_lines = 1
+    "" 注释对比度
+    "let g:nord_comment_brightness = 8
+    "" 统一diff 背景色
+    "let g:nord_uniform_diff_background = 1
+    "" 高亮当前行
+    "let g:nord_cursor_line_number_background = 1
     
+    " dracula
+    let g:dracula_bold = 1
+    let g:dracula_italic = 0
+    let g:dracula_underline = 1
+    let g:dracula_undercurl = 1
+    let g:dracula_inverse = 1
+    let g:dracula_colorterm = 1
 " }
 
 
@@ -209,15 +220,14 @@ set vb
 set nospell                  " 关闭拼写检查 
 set ai                       " 自动缩进
 syntax on                    " 自动语法高亮
-"color dracula                " 设定配色方案
-colorscheme nord 
+color dracula                " 设定配色方案
+"colorscheme nord 
 set number                   " 显示行号
 set nobomb
 set guioptions-=T            " 隐藏工具栏
 " set guioptions-=m              " 隐藏菜单栏
 set autochdir                " 自动切换为当前文件所在的目录
-" set guifont=Consolas:h13     " 设置字体
-set lines=30 columns=85      " 设置启动窗口大小30*85
+set lines=30 columns=88      " 设置启动窗口大小30*85
 set nobackup                 " 覆盖文件时不备份
 set noundofile
 set confirm                  " 设置未保存时候，弹出确认
@@ -233,7 +243,7 @@ set tabstop=4                " 设置tab=4
 set expandtab                " No tabs in the source file
 set smarttab                 " 解决 shiftwidth 和 tabstop 不等时的麻烦
 set list                     " 显示tab 和 空格
-set listchars=tab:->,space:·,eol:$
+set listchars=tab:->,space:·
 set showmatch                " 自动匹配括号
 set noerrorbells             " 关闭错误信息响铃
 set novisualbell             " 关闭使用可视响铃代替呼叫
