@@ -64,11 +64,13 @@
 " }
 
 " Bundles setting {
-    set guifont=DroidSansMonoForPowerline\ NF:h12
+    " 在github/ryanoasis/nerdfont下载相应的文件
+    set guifont=Inconsolata\ NF:h14
+    set guifontwide=DejaVu\ Sans\ Mono:h12
     
     " required if using https://github.com/bling/vim-airline
     let g:airline_powerline_fonts=1
-    let g:airline_theme='simple'
+    let g:airline_theme='luna'
     set laststatus=2 " Always display the statusline in all windows
     set showtabline=2 " Always display the tabline, even if there is only one tab
     set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
