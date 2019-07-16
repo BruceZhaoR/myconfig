@@ -1,0 +1,48 @@
+{
+    "breadcrumbs.enabled": true,
+    "terminal.integrated.shell.windows": "C:\\Git\\bin\\bash.exe",
+    "terminal.integrated.confirmOnExit": true,
+    "terminal.integrated.fontFamily": "'DejaVu Sans Mono'",
+    "terminal.integrated.fontSize": 12,
+    // "terminal.integrated.windowsEnableConpty": true,
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.lineHeight": 0.8,
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.iconTheme": "vscode-icons",
+    "files.associations": {
+        "*.sql": "sql"
+    },
+
+    "python.linting.pylintEnabled": true,
+    "python.jediEnabled": false,
+    "python.condaPath": "D:\\Anaconda3\\Scripts",
+    "python.pythonPath": "D:\\Anaconda3\\python.exe",
+    "extensions.ignoreRecommendations": false,
+    "zenMode.hideLineNumbers": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    "editor.fontFamily": "'DejaVu Sans Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.find.autoFindInSelection": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "editor.maxTokenizationLineLength": 10000,
+    "editor.mouseWheelZoom": true,
+
+    "markdown.preview.lineHeight": 1.3,
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,'Microsoft YaHei','DejaVu Sans','DejaVu Serif',sans-serif",
+    "markdown.extension.print.imgToBase64": true,
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.orderedList": true,
+    "markdown.extension.showExplorer": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "explorer.confirmDelete": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.zoomLevel": 0,
+
+    "emmet.showSuggestionsAsSnippets": true,
+}
