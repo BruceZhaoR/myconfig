@@ -11,19 +11,21 @@ Windows：
 - Color Highlight
 - Excel Viewer
 - HTML Snippets
+- HTML CSS Support
 - InteliSense for CSS Class names
 - Markdown Shortcuts
 - Markdown+Math
+- Markdown All in One
 - dracula Official
 - Open HTML in Deafult Browser
 - Beautify
 - Chinese Language
 - Python
-- Intellicode
-- VS Code Jupyter notebook preview
-- Vim
+- Visual Studio Intellicode
 - vscode-icons
 - GitLens
-- MySQL
-- HTML CSS Support
+- Intellij IDEA Keybindings
+- Better Comments
 
+- MySQL
+- Vim
