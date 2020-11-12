@@ -66,7 +66,7 @@
 
 " Bundles setting {
     " set guifont=DroidSansMonoForPowerline\ NF:h12
-    " 在github/ryanoasis/nerdfont下载相应的文件
+    " 在https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Inconsolata 下载相应的文件
     set guifont=Inconsolata\ NF:h14
     set guifontwide=DejaVu\ Sans\ Mono:h12
     
