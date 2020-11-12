@@ -52,7 +52,7 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
     " Vim-go
-    Plug 'fatih/vim-go'
+    " Plug 'fatih/vim-go'
 
     "" nord theme
     "plug 'arcticicestudio/nord-vim'
@@ -149,7 +149,7 @@
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType go setlocal omnifunc=gocomplete#Complete
+    " autocmd FileType go setlocal omnifunc=gocomplete#Complete
     " Plugin key-mappings.
     " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
     imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -170,6 +170,7 @@
     if has('conceal')
       set conceallevel=2 concealcursor=niv
     endif
+    
     " Enable snipMate compatibility feature.
     let g:neosnippet#enable_snipmate_compatibility = 1
     " Tell Neosnippet about the other snippets
@@ -205,6 +206,27 @@
     let g:dracula_undercurl = 1
     let g:dracula_inverse = 1
     let g:dracula_colorterm = 1
+    
+    " NerdTree
+    " 显示行号
+    let NERDTreeShowLineNumbers=1
+    let NERDTreeAutoCenter=1
+    " 是否显示隐藏文件
+    let NERDTreeShowHidden=1
+    " 设置宽度
+    let NERDTreeWinSize=21
+    " 在终端启动vim时，共享NERDTree
+    let g:nerdtree_tabs_open_on_console_startup=1
+    " 忽略一下文件的显示
+    let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+    " 显示书签列表
+    let NERDTreeShowBookmarks=1
+    
+    " vim-markdown
+    let g:markdown_enable_spell_checking = 0
+    let g:markdown_enable_folding = 0
+    let g:markdown_enable_conceal = 1
+    let g:markdown_enable_mappings = 0
 " }
 
 
@@ -251,7 +273,7 @@ set novisualbell             " 关闭使用可视响铃代替呼叫
 " For R 
 autocmd BufNewFile,BufRead *.R setlocal tabstop=2 shiftwidth=2 expandtab
 " For go show by default 4 spaces for a tab
-"autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+"autocmd BufNewFile,BufRead *.py setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -261,6 +283,9 @@ let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax
 " end custom gui setting }
 
 " diff setting:{
+if &diffopt !~# 'internal'
+  set diffexpr=MyDiff()
+endif
 set diffexpr=MyDiff()
 function MyDiff()
   let opt = '-a --binary '
